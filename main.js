@@ -13,4 +13,16 @@ class Media {
     get ratings() {
         return this._ratings;
     }
+    set isCheckedOut(boolean) {
+        this._isCheckedOut = boolean;
+    }
+    toggleCheckOutStatus() {
+        this._isCheckedOut = !this._isCheckedOut;
+    }
+    getAverageRating() {
+        return this._ratings.reduce((acc, curr) => acc + curr) / this._ratings.length;
+    }
+    addRating(newRating) {
+        this.ratings.push(newRating);
+    }
 }
